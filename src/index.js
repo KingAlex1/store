@@ -12,9 +12,11 @@ import {Router , Route} from 'react-router'
 import Phone    from 'containers/phone'
 
 
+
 import reducers from "reducers"
 import Layout from 'containers/layout'
 import Phones from 'containers/phones'
+import Basket from 'components/basket'
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -31,6 +33,7 @@ ReactDOM.render(
                 <Route path='categories/:id' components={Phones}/>
             </Route>
             <Route path='phones/:id' component={Phone}/>
+            <Route path='/basket' component={Basket}  />
 
         </Router>
     </Provider>,
